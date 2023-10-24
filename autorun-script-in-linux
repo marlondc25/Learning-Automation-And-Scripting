@@ -1,0 +1,24 @@
+#how can i start my script automatic when my linux is started , help! 
+
+[Unit]
+Description=Auto youtube
+
+[Service]
+User=ubuntu22
+ExecStart=/bin/bash -c /home/ubuntu22/auto_youtube.sh
+
+
+[Install]
+WantedBy=multi-user.target
+ubuntu22@ubuntu22-VirtualBox:~$ sudo cat /etc/systemd/system/auto_youtube.service
+[sudo] password for ubuntu22: 
+[Unit]
+Description=Auto youtube
+
+[Service]
+User=ubuntu22
+ExecStart=/bin/bash -c /home/ubuntu22/auto_youtube.sh
+
+
+[Install]
+WantedBy=multi-user.target
