@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/ubuntu22/auto_youtube.sh
+Hidden=false
+NoDisplay=false
+X-gnome-autostart-enabled=true
+name=Auto Youtube Script
+Comment[en_US]=Open Youtube and play a random video.
+Comment=Open Youtube and play a random video.
