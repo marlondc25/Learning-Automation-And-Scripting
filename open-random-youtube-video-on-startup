@@ -1,0 +1,30 @@
+#please install xdotool apt first then proceed
+#use my autorun-script-in-linux for this script to run on start up
+firefox &
+
+sleep 5
+
+xdotool serach --name "Mozilla Firefox" windowactivate --sync
+
+xdotool type "youtube.com"
+
+xdotool key Return
+
+sleep 6
+
+xdotool key Tab Tab Tab Tab
+
+sleep 1
+
+xdotool type "create your first script in linux - beginners"
+
+xdotool key Return
+
+sleep 5
+
+xdotool mousemove 800 500 click 1
+
+
+xdotool key space
+
+exit 0
