@@ -1,0 +1,24 @@
+@echo off
+cls
+echo Choose a Wi-Fi Access Point Configuration:
+echo 1. Home (SSID: Your-Home-Wifi-SSID)
+echo 2. Work (SSID: Your-Work-Wifi-SSID)
+set /p choice=Enter the number (home or work) for your choice: 
+
+if "%choice%"=="home" (
+    netsh wlan add profile filename="C:\networkprofile\Your-Home-Wifi-SSID.xml" user=all
+    netsh wlan connect name="Your-Home-Wifi-SSID" ssid="Your-Home-Wifi-SSID"
+    netsh interface ip set address name="Wi-Fi" static 192.168.xxx.xxx 255.255.255.0 192.168.xxx.xxx
+) else if "%choice%"=="work" (
+    netsh wlan add profile filename="C:\networkprofile\Your-Work-Wifi-SSID.xml" user=all
+    netsh wlan connect name="Your-Work-Wifi-SSID" ssid="Your-Work-Wifi-SSID"
+    netsh interface ip set address name="Wi-Fi" static 192.168.xx.xx 255.255.255.0 192.168.xx.xx
+) else (
+    echo Invalid choice. No changes made.
+)
+
+pause
+
+#need to create a basic task on task scheduler, change the task properties to highest privilages
+#need to create also XML files of your network interfaces for him to find your existing ssids in C:\ProgramData\Microsoft\Wlansvc\Profiles\Interfaces
+#this code is usefull if you have static ip's set up on your home and work on a single device
