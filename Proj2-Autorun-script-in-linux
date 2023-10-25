@@ -11,14 +11,5 @@ ExecStart=/bin/bash -c /home/ubuntu22/auto_youtube.sh
 [Install]
 WantedBy=multi-user.target
 
-[sudo] password for ubuntu22: 
-[Unit]
-Description=Auto youtube
+[sudo] password for ubuntu22: yoursudopassword
 
-[Service]
-User=ubuntu22
-ExecStart=/bin/bash -c /home/ubuntu22/auto_youtube.sh
-
-
-[Install]
-WantedBy=multi-user.target
