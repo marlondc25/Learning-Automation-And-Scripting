@@ -1,18 +1,18 @@
 @echo off
 cls
 echo Choose a Wi-Fi Access Point Configuration:
-echo 1. Home (SSID: AmarahLouizeDC)
-echo 2. Work (SSID: Management AP)
+echo 1. Home (SSID: YourWifiID1)
+echo 2. Work (SSID: YourWifiID2)
 set /p choice=Enter the number (home or work) for your choice: 
 
 if "%choice%"=="home" (
-    netsh wlan add profile filename="C:\networkprofile\Wi-Fi-AmarahLouizeDC.xml" user=all
-    netsh wlan connect name="AmarahLouizeDC" ssid="AmarahLouizeDC"
-    netsh interface ip set address name="Wi-Fi" static 192.168.100.96 255.255.255.0 192.168.100.1
+    netsh wlan add profile filename="C:\networkprofile\Wi-Fi-YourWifiID1.xml" user=all
+    netsh wlan connect name="YourWifiID1" ssid="YourWifiID1"
+    netsh interface ip set address name="Wi-Fi" static 192.168.xx.xx255.255.255.0 192.168.xx.xx
 ) else if "%choice%"=="work" (
-    netsh wlan add profile filename="C:\networkprofile\Wi-Fi-Management AP.xml" user=all
-    netsh wlan connect name="Management AP" ssid="Management AP"
-    netsh interface ip set address name="Wi-Fi" static 192.168.20.96 255.255.255.0 192.168.20.1
+    netsh wlan add profile filename="C:\networkprofile\Wi-Fi-YourWifiID2.xml" user=all
+    netsh wlan connect name="YourWifiID2" ssid="YourWifiID2"
+    netsh interface ip set address name="Wi-Fi" static 192.168.xx.xx 255.255.255.0 192.168.xx.xx
 ) else (
     echo Invalid choice. No changes made.
 )
